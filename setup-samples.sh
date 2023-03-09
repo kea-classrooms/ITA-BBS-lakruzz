@@ -1,3 +1,5 @@
+#!/bin/env bash
+
 mkdir samples
 mkdir samples/animals
 mkdir samples/animals/countries
@@ -8,19 +10,26 @@ COUNTRIES=('Denmark' 'Sweden' 'USA' 'France' 'Italy' '.apes' 'North Korea')
 MOVIES=('Batman' 'Sex And The City' 'JFK' 'Poltergeist' 'Germany')
 
 cd samples/animals 
-for id in ${ANIMALS[@]}
+for id in "${ANIMALS[@]}"
 do
-echo $id >> $id.txt
+echo $id >> "$id.txt"
 done
 
 cd countries
-for id in ${COUNTRIES[@]}
+for id in "${COUNTRIES[@]}"
 do
-echo $id >> $id.txt
+echo $id >> "$id.txt"
 done
 
 cd movies
-for id in ${MOVIES[@]}
+for id in "${MOVIES[@]}"
 do
-echo $id >> $id.txt
+echo $id >> "$id.txt"
 done
+
+
+echo VI STÅR HER:
+
+pwd
+
+$(git rev-parse --show-toplevel)/fix-samples.sh
